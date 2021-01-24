@@ -19,7 +19,7 @@ An unofficial JavaScript port of PyTorch C++ frontend (libtorch).
 
 ## Build It Yourself
 
-We have pre-built packages. If you want to build the package youself, below are
+We have pre-built binaries. If you want to build the package youself, below are
 the steps to reproduce the build.
 
 Installing on Linux:
