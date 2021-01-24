@@ -1,0 +1,58 @@
+{
+  "name": "tch-js",
+  "version": "0.0.1-alpha.1",
+  "description": "A JavaScript port of PyTorch C++ frontend (libtorch)",
+  "main": "lib/index.js",
+  "author": "Cedric Chee <cedrick.chee+gh@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cedrickchee/tch-js"
+  },
+  "engines": {
+    "node": "^10 || >=12"
+  },
+  "os": [
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "keywords": [
+    "n-api",
+    "pytorch",
+    "libtorch",
+    "tensor",
+    "ScriptModule",
+    "neural-network",
+    "deep-learning"
+  ],
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build=false",
+    "pre-build": "node-pre-gyp rebuild package",
+    "pre-publish": "node-pre-gyp publish",
+    "pre-unpublish": "node-pre-gyp unpublish",
+    "cmake-rebuild": "ncmake rebuild",
+    "test": "mocha tests"
+  },
+  "dependencies": {
+    "node-pre-gyp": "^0.14.0",
+    "bindings": "^1.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "node-addon-api": "^1.6.2",
+    "node-cmake": "^2.5.1"
+  },
+  "binary": {
+    "module_name": "tch-js",
+    "module_path": "./lib/binding/napi-v{napi_build_version}",
+    "remote_path": "./{module_name}/v{version}/{configuration}/",
+    "package_name": "{platform}-{arch}-napi-v{napi_build_version}.tar.gz",
+    "napi_versions": [
+      3
+    ]
+  }
+}
