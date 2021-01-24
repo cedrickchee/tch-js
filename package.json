@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cedrickchee/tch-js"
+    "url": "https://github.com/cedrickchee/tch-js.git"
   },
   "engines": {
     "node": "^10 || >=12"
@@ -31,7 +31,7 @@
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false",
     "pre-build": "node-pre-gyp rebuild package",
-    "pre-publish": "node-pre-gyp publish",
+    "pre-publish": "node-pre-gyp-github publish",
     "pre-unpublish": "node-pre-gyp unpublish",
     "cmake-rebuild": "ncmake rebuild",
     "test": "mocha tests"
@@ -49,9 +49,9 @@
   "binary": {
     "module_name": "tchjs",
     "module_path": "./lib/binding/napi-v{napi_build_version}",
-    "remote_path": "./{module_name}/v{version}/{configuration}/",
+    "remote_path": "{version}",
     "package_name": "{platform}-{arch}-napi-v{napi_build_version}.tar.gz",
-    "host": "https://tch-js.s3.amazonaws.com/",
+    "host": "https://github.com/cedrickchee/tch-js/releases/download/",
     "napi_versions": [
       3
     ]
