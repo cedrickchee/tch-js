@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
-project(tch-js)
+project(tchjs)
 
 # Node-cmake
 include(NodeJS.cmake)
