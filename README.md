@@ -103,3 +103,20 @@ The library should:
 - expose more libtorch types and APIs for inference
 - supports Windows
 - auto build binaries using CI
+- TypeScript types
+
+## Research
+
+- [PyTorch 1.0 tracing JIT and LibTorch C++ API to integrate PyTorch into NodeJS](https://blog.christianperone.com/2018/10/pytorch-1-0-tracing-jit-and-libtorch-c-api-to-integrate-pytorch-into-nodejs/)
+- [tch-rs](https://github.com/LaurentMazare/tch-rs) - Rust bindings for the C++ API of PyTorch
+- [torch-js](https://github.com/arition/torch-js) - Node.js binding for PyTorch
+- [pytorchjs](https://github.com/raghavmecheri/pytorchjs) - Torch and TorchVision, but for NodeJS
+- [Using the PyTorch C++ Frontend tutorial](https://pytorch.org/tutorials/advanced/cpp_frontend.html)
+- [Loading a TorchScript Model in C++](https://pytorch.org/tutorials/advanced/cpp_export.html)
+- [Torchaudio.load() in C++](https://discuss.pytorch.org/t/torchaudio-load-in-c/62400)
+- [Minimal PyTorch 1.0 -> C++ full example demo](https://gist.github.com/zeryx/526dbc05479e166ca7d512a670e6b82d)
+- [Convert libtorch tensor into an array](https://discuss.pytorch.org/t/convert-tensor-into-an-array/56721)
+- [JavaScript TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray)
+- [Napi::TypedArray](https://github.com/nodejs/node-addon-api/blob/master/doc/typed_array_of.md) - Node.js N-API doc
+- [How to use WebAssembly from node.js?](https://stackoverflow.com/questions/51403326/how-to-use-webassembly-from-node-js) - C++ to WebAssembly to Node.js
+- [node-pre-gyp](https://github.com/mapbox/node-pre-gyp) - Node.js tool for easy binary deployment of C++ addons
