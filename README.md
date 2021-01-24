@@ -1,6 +1,18 @@
 # tch-js
 
-An unofficial JavaScript port of PyTorch C++ frontend (libtorch).
+An unofficial JavaScript port of PyTorch C++ library (libtorch).
+
+## Install
+
+Package publishing to NPM is still work-in-progress. In the meantime, you can
+install the package directly from GitHub.
+
+```sh
+$ npm i git+https://github.com/cedrickchee/tch-js.git
+```
+
+The package will download the pre-built binary during installation. You don't
+have to download PyTorch/libtorch or install tools for compiling from source.
 
 ## Versions Supported
 
@@ -8,19 +20,18 @@ An unofficial JavaScript port of PyTorch C++ frontend (libtorch).
   - 10 (tested)
   - 12 (tested)
   - 14 (WIP)
-- PyTorch:
+- PyTorch (CPU):
   - 1.4.X (tested)
   - 1.5.X
   - 1.6.X
   - 1.7.X (tested)
-- OS:
-  - Linux (tested)
-  - Windows (WIP)
 
 ## Build It Yourself
 
-We have pre-built binaries. If you want to build the package youself, below are
-the steps to reproduce the build.
+Currently, only Linux builds are available.
+
+If you want to build the package youself, below are the steps to reproduce the
+build.
 
 Installing on Linux:
 - Ubuntu 18.04 (tested)
@@ -52,3 +63,10 @@ $ npm i --ignore-scripts
 ```sh
 $ npm run pre-build
 ```
+
+## The Plan
+
+The library should:
+- expose more libtorch types and APIs for inference
+- supports Windows
+- auto build binaries using CI
