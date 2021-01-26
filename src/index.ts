@@ -1,3 +1,3 @@
-import torch from './binding';
+import tch from './binding';
 
-export default torch;
+export { tch };

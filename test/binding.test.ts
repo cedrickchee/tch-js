@@ -1,8 +1,8 @@
-import torch from '../src/binding';
+import binding from '../src/binding';
 
 describe('binding', () => {
   it('module should load', () => {
-    expect(torch).not.toBeNull();
-    console.log(torch);
+    expect(binding).not.toBeNull();
+    console.log('binding:', binding);
   });
 });

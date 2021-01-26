@@ -30,7 +30,7 @@ have to download PyTorch/libtorch or install tools for compiling from source.
 
 ```javascript
 // This is a real example from an audio source separation model.
-const tch = require('tch-js');
+const { tch } = require('tch-js');
 const fs = require('fs');
 const wav = require('node-wav');
 
