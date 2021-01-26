@@ -1,6 +1,3 @@
-// const expect = require('chai').expect;
-// const torch = require('../lib/');
-
 import torch from '../src';
 import path from 'path';
 
@@ -37,17 +34,20 @@ describe('tch-js', () => {
     });
   });
 
-  it('load', (done) => {
+  it('load', done => {
     const input = torch.tensor(new Float32Array([1.5, 5.5]));
 
-    torch.load(path.join(__dirname, 'data', 'matmul.pt'), (_err: any, model: any) => {
-      model.forward(input, (_err: any, result: any) => {
-        const output = result.toUint8Array();
+    torch.load(
+      path.join(__dirname, 'data', 'matmul.pt'),
+      (_err: any, model: any) => {
+        model.forward(input, (_err: any, result: any) => {
+          const output = result.toUint8Array();
 
-        expect([...output]).toEqual([3, 11]);
+          expect([...output]).toEqual([3, 11]);
 
-        done();
-      });
-    });
+          done();
+        });
+      }
+    );
   });
 });
