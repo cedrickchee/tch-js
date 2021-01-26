@@ -6,7 +6,7 @@ project(tchjs)
 include(NodeJS.cmake)
 nodejs_init()
 
-file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/*.cc" "${PROJECT_SOURCE_DIR}/src/*.h")
+file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/csrc/*.cc" "${PROJECT_SOURCE_DIR}/csrc/*.h")
 add_nodejs_module(${PROJECT_NAME} ${SRC_FILES})
 
 # Look for shared libs in the same directory

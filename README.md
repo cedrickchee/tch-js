@@ -1,6 +1,6 @@
 # tch-js
 
-An unofficial JavaScript port of PyTorch C++ library (libtorch).
+An unofficial JavaScript and TypeScript port of PyTorch C++ library (libtorch).
 
 ## Install
 
@@ -95,6 +95,12 @@ $ npm i --ignore-scripts
 
 ```sh
 $ npm run pre-build
+```
+
+6. Test
+
+```sh
+$ npm run test
 ```
 
 ## The Plan

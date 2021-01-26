@@ -1,6 +1,9 @@
 node_modules
+dist
 libtorch
 *.tgz
+*.log
 build*
 cmake-build*
 lib/binding
+.DS_Store

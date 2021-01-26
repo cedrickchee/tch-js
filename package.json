@@ -2,7 +2,12 @@
   "name": "tch-js",
   "version": "0.0.1-alpha.1",
   "description": "A JavaScript port of PyTorch C++ frontend (libtorch)",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "author": "Cedric Chee <cedrick.chee+gh@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -34,26 +39,59 @@
     "pre-publish": "node-pre-gyp-github publish",
     "pre-unpublish": "node-pre-gyp unpublish",
     "cmake-rebuild": "ncmake rebuild",
-    "test": "mocha tests"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
   "dependencies": {
     "node-pre-gyp": "^0.14.0",
     "bindings": "^1.3.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "husky": "^4.3.8",
+    "size-limit": "^4.9.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3",
     "node-addon-api": "^1.6.2",
     "node-cmake": "^2.5.1"
   },
+  "peerDependencies": {},
   "binary": {
     "module_name": "tchjs",
-    "module_path": "./lib/binding/napi-v{napi_build_version}",
+    "module_path": "./dist/binding/napi-v{napi_build_version}",
     "remote_path": "{version}",
     "package_name": "{platform}-{arch}-napi-v{napi_build_version}.tar.gz",
     "host": "https://github.com/cedrickchee/tch-js/releases/download/",
     "napi_versions": [
       3
     ]
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "module": "dist/tch-js.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/tch-js.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/tch-js.esm.js",
+      "limit": "10 KB"
+    }
+  ]
 }
