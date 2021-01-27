@@ -1,4 +1,4 @@
-import { tch } from '../src';
+import { tch, load, Tensor } from '../src';
 import path from 'path';
 
 describe('tch-js', () => {
@@ -34,20 +34,19 @@ describe('tch-js', () => {
     });
   });
 
-  it('load', done => {
+  it('load', async done => {
     const input = tch.tensor(new Float32Array([1.5, 5.5]));
 
-    tch.load(
-      path.join(__dirname, 'data', 'matmul.pt'),
-      (_err: any, model: any) => {
-        model.forward(input, (_err: any, result: any) => {
-          const output = result.toUint8Array();
+    const model = await load(path.join(__dirname, 'data', 'matmul.pt'));
+    const getResult = (err: Error, result: Tensor) => {
+      if (err) return;
 
-          expect([...output]).toEqual([3, 11]);
+      const output = result.toUint8Array();
 
-          done();
-        });
-      }
-    );
+      expect([...output]).toEqual([3, 11]);
+
+      done();
+    };
+    model.forward(input, getResult);
   });
 });
